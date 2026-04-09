@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mate Virtual 🧉</title>
+  <meta name="description" content="Mandá un mate virtual de una forma divertida." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="card" id="mainCard">
+      <div class="mate-emoji">🧉</div>
+
+      <p class="tag">Mate virtual premium</p>
+
+      <h1 id="mainTitle">Te mando un mate virtual</h1>
+
+      <p class="subtitle" id="mainSubtitle">
+        Está calentito, bien cebado y viene con buena charla incluida.
+      </p>
+
+      <div class="buttons-area" id="buttonsArea">
+        <button class="btn btn-yes" id="yesBtn">Sí, lo acepto</button>
+        <button class="btn btn-no" id="noBtn">No, gracias</button>
+      </div>
+
+      <p class="hint">Tip: el botón “No” es medio complicado de agarrar 😏</p>
+    </section>
+
+    <section class="card success hidden" id="successCard">
+      <div class="success-emoji">🧉✨</div>
+      <p class="tag">Mate entregado</p>
+      <h2 id="successTitle">¡Aceptaste el mate!</h2>
+      <p class="subtitle" id="successSubtitle">
+        Excelente decisión. Este mate virtual viene con bizcochitos imaginarios y cero riesgo de que se lave.
+      </p>
+
+      <div class="success-actions">
+        <button class="btn btn-yes" id="resetBtn">Enviar otro mate</button>
+        <button class="btn btn-secondary" id="shareBtn">Copiar link</button>
+      </div>
+
+      <p class="copied-message" id="copiedMessage"></p>
+    </section>
+  </main>
+
+  <div id="floatingHearts"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
