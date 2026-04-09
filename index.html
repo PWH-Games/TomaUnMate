@@ -9,40 +9,99 @@
 </head>
 <body>
   <main class="page">
-    <section class="card" id="mainCard">
-      <div class="mate-emoji">🧉</div>
+    <div class="layout">
+      <section class="card generator-card" id="generatorCard">
+        <div class="mini-badge">Panel creador</div>
+        <h2>Crear link de mate virtual</h2>
+        <p class="subtitle small">
+          Completá los datos y generá un link listo para compartir.
+        </p>
 
-      <p class="tag">Mate virtual premium</p>
+        <div class="form-grid">
+          <div class="field">
+            <label for="paraInput">Para</label>
+            <input
+              type="text"
+              id="paraInput"
+              placeholder="Ej: Fer"
+              maxlength="60"
+            />
+          </div>
 
-      <h1 id="mainTitle">Te mando un mate virtual</h1>
+          <div class="field">
+            <label for="deInput">De</label>
+            <input
+              type="text"
+              id="deInput"
+              placeholder="Ej: Flor"
+              maxlength="60"
+            />
+          </div>
+        </div>
 
-      <p class="subtitle" id="mainSubtitle">
-        Está calentito, bien cebado y viene con buena charla incluida.
-      </p>
+        <div class="field">
+          <label for="mensajeInput">Mensaje opcional</label>
+          <input
+            type="text"
+            id="mensajeInput"
+            placeholder="Ej: Va con mucho cariño y bizcochitos"
+            maxlength="120"
+          />
+        </div>
 
-      <div class="buttons-area" id="buttonsArea">
-        <button class="btn btn-yes" id="yesBtn">Sí, lo acepto</button>
-        <button class="btn btn-no" id="noBtn">No, gracias</button>
-      </div>
+        <div class="generator-actions">
+          <button class="btn btn-yes" id="generateBtn">Generar link</button>
+          <button class="btn btn-secondary" id="clearBtn">Limpiar</button>
+        </div>
 
-      <p class="hint">Tip: el botón “No” es medio complicado de agarrar 😏</p>
-    </section>
+        <div class="result-box">
+          <label for="generatedLink">Link generado</label>
+          <input type="text" id="generatedLink" readonly />
+        </div>
 
-    <section class="card success hidden" id="successCard">
-      <div class="success-emoji">🧉✨</div>
-      <p class="tag">Mate entregado</p>
-      <h2 id="successTitle">¡Aceptaste el mate!</h2>
-      <p class="subtitle" id="successSubtitle">
-        Excelente decisión. Este mate virtual viene con bizcochitos imaginarios y cero riesgo de que se lave.
-      </p>
+        <div class="generator-actions">
+          <button class="btn btn-secondary" id="copyGeneratedBtn">Copiar link</button>
+          <button class="btn btn-secondary" id="openGeneratedBtn">Abrir link</button>
+        </div>
 
-      <div class="success-actions">
-        <button class="btn btn-yes" id="resetBtn">Enviar otro mate</button>
-        <button class="btn btn-secondary" id="shareBtn">Copiar link</button>
-      </div>
+        <p class="copied-message" id="generatorMessage"></p>
+      </section>
 
-      <p class="copied-message" id="copiedMessage"></p>
-    </section>
+      <section class="card" id="mainCard">
+        <div class="mate-emoji">🧉</div>
+
+        <p class="tag">Mate virtual premium</p>
+
+        <h1 id="mainTitle">Te mando un mate virtual</h1>
+
+        <p class="subtitle" id="mainSubtitle">
+          Está calentito, bien cebado y viene con buena charla incluida.
+        </p>
+
+        <div class="buttons-area" id="buttonsArea">
+          <button class="btn btn-yes" id="yesBtn">Sí, lo acepto</button>
+          <button class="btn btn-no" id="noBtn">No, gracias</button>
+        </div>
+
+        <p class="hint">Tip: el botón “No” es medio complicado de agarrar 😏</p>
+      </section>
+
+      <section class="card success hidden" id="successCard">
+        <div class="success-emoji">🧉✨</div>
+        <p class="tag">Mate entregado</p>
+        <h2 id="successTitle">¡Aceptaste el mate!</h2>
+        <p class="subtitle" id="successSubtitle">
+          Excelente decisión. Este mate virtual viene con bizcochitos imaginarios y cero riesgo de que se lave.
+        </p>
+
+        <div class="success-actions">
+          <button class="btn btn-yes" id="resetBtn">Enviar otro mate</button>
+          <button class="btn btn-secondary" id="shareBtn">Copiar link actual</button>
+        </div>
+
+        <p class="copied-message" id="copiedMessage"></p>
+      </section>
+    </div>
   </main>
 
   <div id="floatingHearts"></div>
