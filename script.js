@@ -41,8 +41,9 @@ function hasPersonalizationParams() {
   const para = sanitizeText(getQueryParam("para") || "");
   const de = sanitizeText(getQueryParam("de") || "");
   const mensaje = sanitizeText(getQueryParam("mensaje") || "");
+  const anonimo = getQueryParam("anonimo");
 
-  return para !== "" || de !== "" || mensaje !== "";
+  return para !== "" || de !== "" || mensaje !== "" || anonimo === "1";
 }
 
 function setupViewMode() {
@@ -225,10 +226,25 @@ yesBtn.addEventListener("click", acceptMate);
 resetBtn.addEventListener("click", resetFlow);
 shareBtn.addEventListener("click", copyCurrentLink);
 
+const anonimoBtnGen = document.getElementById("anonimoBtnGen");
+
 generateBtn.addEventListener("click", () => buildGeneratedLink(true));
 copyGeneratedBtn.addEventListener("click", copyGeneratedLink);
 openGeneratedBtn.addEventListener("click", openGeneratedLink);
 clearBtn.addEventListener("click", clearGenerator);
+
+anonimoBtnGen.addEventListener("click", () => {
+  paraInput.value = "";
+  deInput.value = "";
+  mensajeInput.value = "";
+
+  const url = new URL(window.location.origin + window.location.pathname);
+  url.searchParams.set("anonimo", "1");
+  generatedLink.value = url.toString();
+  generatorMessage.textContent = "Link anónimo listo para compartir.";
+
+  updateTitles({ para: "", de: "", mensaje: "" });
+});
 
 paraInput.addEventListener("input", () => buildGeneratedLink(true));
 deInput.addEventListener("input", () => buildGeneratedLink(true));
